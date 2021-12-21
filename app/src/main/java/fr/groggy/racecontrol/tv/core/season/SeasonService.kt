@@ -88,6 +88,7 @@ class SeasonService @Inject constructor(
                         id = session.id,
                         contentId = session.contentId,
                         name = session.name,
+                        largePictureUrl =session.largePictureUrl,
                         contentSubtype = session.contentSubtype,
                         thumbnail = thumbnail,
                         channels = session.channels
@@ -99,7 +100,7 @@ class SeasonService @Inject constructor(
 
     private fun thumbnail(session: F1TvSession): Flow<Image> {
         return flowOf(
-            Image(Uri.parse(session.pictureUrl))
+            Image(Uri.parse(session.largePictureUrl)) // We use the large picture url since a better quality image is preferred on a large screen
         )
     }
 }
