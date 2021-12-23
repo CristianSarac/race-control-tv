@@ -88,7 +88,7 @@ class SeasonBrowseFragment : BrowseSupportFragment(), OnItemViewClickedListener 
                     Glide.with(requireActivity())
                         .load(item.largePictureUrl)
                         .centerCrop()
-                        .error(R.drawable.banner) // In case of error we show the banner , maybe a error image could be better ?
+                        .error(R.drawable.banner)
                         .into<CustomTarget<Drawable>>(object :
                             CustomTarget<Drawable>(metrics.widthPixels, metrics.heightPixels) {
 
